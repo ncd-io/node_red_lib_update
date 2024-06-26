@@ -1,0 +1,144 @@
+[
+    {
+        "id": "523e19840d8e9d77",
+        "type": "inject",
+        "z": "28d4dcf19a378b58",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 160,
+        "y": 400,
+        "wires": [
+            [
+                "ae42c98f22f871c1"
+            ]
+        ]
+    },
+    {
+        "id": "ae42c98f22f871c1",
+        "type": "exec",
+        "z": "28d4dcf19a378b58",
+        "command": "cd ~/.node-red ; npm install https://github.com/ncd-io/node-red-enterprise-sensors/tree/temp-dev",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "Update library to Dev Branch",
+        "x": 400,
+        "y": 400,
+        "wires": [
+            [
+                "7e01aae877ab6955"
+            ],
+            [
+                "7e01aae877ab6955"
+            ],
+            [
+                "7e01aae877ab6955"
+            ]
+        ]
+    },
+    {
+        "id": "b0542c40268424d7",
+        "type": "exec",
+        "z": "28d4dcf19a378b58",
+        "command": "pm2 restart all",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "Restart Node-Red",
+        "x": 370,
+        "y": 200,
+        "wires": [
+            [
+                "45fca820150f05b3"
+            ],
+            [
+                "45fca820150f05b3"
+            ],
+            [
+                "45fca820150f05b3"
+            ]
+        ]
+    },
+    {
+        "id": "8a46d5bab60d4ca0",
+        "type": "inject",
+        "z": "28d4dcf19a378b58",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 160,
+        "y": 200,
+        "wires": [
+            [
+                "b0542c40268424d7"
+            ]
+        ]
+    },
+    {
+        "id": "7e01aae877ab6955",
+        "type": "debug",
+        "z": "28d4dcf19a378b58",
+        "name": "debug 16",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 700,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "45fca820150f05b3",
+        "type": "debug",
+        "z": "28d4dcf19a378b58",
+        "name": "debug 17",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 700,
+        "y": 200,
+        "wires": []
+    }
+]
